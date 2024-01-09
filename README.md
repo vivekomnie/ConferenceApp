@@ -1,1 +1,1 @@
-# ConferenceApp
+# MyConference

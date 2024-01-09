@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConference.Pages.ScheduleSponsorsPage"
+             xmlns:viewmodel="clr-namespace:MyConference.ViewModels"
+             xmlns:model="clr-namespace:MyConference.Models"
+             x:DataType="viewmodel:ScheduleSponsorsViewModel"
+             xmlns:local="clr-namespace:MyConference.ViewModels"
+             Title="Sponsors">
+    <ContentPage.BindingContext>
+        <local:ScheduleSponsorsViewModel></local:ScheduleSponsorsViewModel>
+    </ContentPage.BindingContext>
+    <ListView ItemsSource="{Binding sponsorList}"
+              HasUnevenRows="True"
+              IsGroupingEnabled="false"
+              SeparatorVisibility="None"
+              ItemTapped="OnItemSelected"
+              >
+        <!--<ListView.GroupHeaderTemplate>
+            <DataTemplate x:DataType="{x:Null}">
+                <ViewCell>
+                    <Grid Padding="20,10,8,8">
+                        <Label Text="{Binding Key}"
+                               TextColor="{StaticResource Primary}"
+                               FontSize="18" FontAttributes="Bold"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>-->
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="model:Sponsor">
+                <ViewCell>
+                    <Grid Padding="10" HeightRequest="220">
+                        <Border Padding="0" Stroke="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}"
+                                StrokeShape="RoundRectangle 10"
+                                StrokeThickness="0"
+                                ToolTipProperties.Text="{Binding Description}"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+                            <FlyoutBase.ContextFlyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="Favorite"/>
+                                    <MenuFlyoutItem Text="Add to Calendar"/>
+                                    <MenuFlyoutItem Text="More Info"/>
+                                </MenuFlyout>
+                            </FlyoutBase.ContextFlyout>
+                            <!--<Grid >
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.7*" />
+        <ColumnDefinition Width="0.3*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="40" />
+        <RowDefinition Height="40" />
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0"
+           Text="{Binding Name}" />
+                                <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+
+           Text="This text uses the This text uses the RowSpan property to span two rows" />
+                                 <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" 
+                                  
+                                  HeightRequest="70" WidthRequest="70" Padding="0"
+                                  CornerRadius="10" IsClippedToBounds="True">
+                                <Frame.Content>
+                                        <Image x:Name="imageCell"
+                                               Source="{Binding DisplayUrl}"
+                                               
+                                               Aspect="AspectFill"
+                                               Background="AliceBlue"
+                                               
+                                               
+                                              />
+                                    </Frame.Content>
+                                </Frame>
+                                <Label Grid.Row="1" Grid.Column="0"
+           Text="{Binding Description}" />
+   
+</Grid>-->
+
+                           <Frame HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="FillAndExpand"
+                                  HeightRequest="190" Padding="0"
+                                  CornerRadius="10" IsClippedToBounds="True">
+                                <Frame.Content>
+                                        <Image x:Name="imageCell"
+                                               Source="{Binding DisplayUrl}"
+                                               
+                                               Aspect="AspectFill"
+                                               Background="AliceBlue"
+                                               
+                                               
+                                              />
+                                    </Frame.Content>
+                                </Frame>
+
+                                <!--<HorizontalStackLayout>
+
+
+                                </HorizontalStackLayout>
+                                <Label Text="{Binding Name}" FontSize="24"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding Description, StringFormat='Description {0}'}"/>-->
+                          
+                        </Border>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>

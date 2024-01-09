@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConference.Pages.ConferenceDetailPage"
+             xmlns:model="clr-namespace:MyConference.Models"
+             xmlns:local="clr-namespace:MyConference.ViewModels"
+             Title="" NavigationPage.BackButtonTitle="Back">
+    <ContentPage.BindingContext>
+
+        <local:ConferenceDetailViewModel></local:ConferenceDetailViewModel>
+    </ContentPage.BindingContext>
+   
+        <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+    <StackLayout Orientation="Vertical" Spacing="0" Margin="10" VerticalOptions="Fill" >
+            <HorizontalStackLayout Spacing="10" Margin="5" HorizontalOptions="Center">
+                <!--<Label  FontSize="17"
+                                       FontAttributes="Bold" Text="Name      :" />-->
+        <Label x:Name="nameLbl"
+               Text="{Binding
+               aConference.Name}" FontSize="17"
+                                       FontAttributes="Bold"/>
+
+            </HorizontalStackLayout>
+           
+            <!--<HorizontalStackLayout Spacing="10" Margin="5">
+            <Label FontSize="17"
+                                       FontAttributes="Bold" Text="Address   :" />
+        <Label x:Name="addresslbl" Text="{Binding aConference.Address}"
+            VerticalOptions="Center"
+            
+             />
+                 </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10" Margin="5">
+            <Label FontSize="17"
+                                       FontAttributes="Bold" Text="Start Date:" />
+        <Label x:Name="startDateLbl" Text="{Binding aConference.StartDateD}"
+            />
+                 </HorizontalStackLayout>
+             <HorizontalStackLayout Spacing="10" Margin="5">
+            <Label FontSize="17"
+                                       FontAttributes="Bold" Text="End Date  :" />
+        <Label x:Name="endDateLbl" Text="{Binding aConference.EndDateD}"
+            
+            
+             />
+                </HorizontalStackLayout>
+             <HorizontalStackLayout Spacing="10" Margin="5">
+            <Label FontSize="17"
+                                       FontAttributes="Bold" Text="Description:" />
+        <Label x:Name="descriptionLbl" TextColor="Black" Text="{Binding aConference.Description}"
+             />
+                </HorizontalStackLayout>-->
+        <Label x:Name="sessionTitleText" Text=" Sessions" FontSize="Header" TextColor="Black"/>
+          
+         <ListView ItemsSource="{Binding Schedule}"
+              HasUnevenRows="True"
+              IsGroupingEnabled="True"
+              SeparatorVisibility="None"
+              SelectionMode="None"
+              ItemTapped="OnItemSelected"
+              GroupDisplayBinding="{Binding Key}">
+        <ListView.GroupHeaderTemplate>
+            <DataTemplate x:DataType="{x:Null}">
+                <ViewCell>
+                    <Grid Padding="20,10,8,8">
+                        <Label Text="{Binding Key}"
+                               TextColor="{StaticResource Primary}"
+                               FontSize="18" FontAttributes="Bold"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.GroupHeaderTemplate>
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="model:ConfSession">
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Border Padding="14" Stroke="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}"
+                                StrokeShape="RoundRectangle 10"
+                                StrokeThickness="2"
+                                ToolTipProperties.Text="{Binding Description}"
+                                BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}">
+                            <FlyoutBase.ContextFlyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="Favorite"/>
+                                    <MenuFlyoutItem Text="Add to Calendar"/>
+                                    <MenuFlyoutItem Text="More Info"/>
+                                </MenuFlyout>
+                            </FlyoutBase.ContextFlyout>
+                            <VerticalStackLayout Spacing="8">
+                                <Label Text="{Binding Name}" FontSize="24"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding SpeakerName, StringFormat='Speaker: {0}'}"/>
+                                <Label Text="{Binding Description, StringFormat='Description: {0}'}"/>
+                                      
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+    </StackLayout>
+            </ScrollView>
+</ContentPage>

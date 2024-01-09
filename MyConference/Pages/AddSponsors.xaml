@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConference.Pages.AddSponsors"
+             Title="Add Sponsors" NavigationPage.BackButtonTitle="Back">
+    <VerticalStackLayout Margin="10" Spacing="20" >
+        <Label Text="Name: " FontSize="16"
+                                       FontAttributes="Bold"/>
+        <Entry Placeholder="Name" x:Name="nameFiled"/>
+        <Label Text="Description: " FontSize="16"
+                                       FontAttributes="Bold"/>
+        <Entry Placeholder="Description" x:Name="descriptionField"/>
+        <Label Text="Logo url(ex: http://www.logo.com/mypic.jpg): " FontSize="16"
+                                       FontAttributes="Bold"/>
+       
+         <Grid ColumnSpacing="5">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.8*" />
+        <ColumnDefinition Width="0.2*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="34" />
+       
+    </Grid.RowDefinitions>
+    <Entry Grid.Row="0" Grid.Column="0" Placeholder="LogoUrl" x:Name="logoUrlField"/>
+                               
+            <Button Grid.Row="0" Grid.Column="1"  Text="View" Clicked="PreviewImage_Clicked"
+                />
+                                 
+                             
+   
+</Grid>
+        <Button Text="Add" Clicked="AddSponsor_Clicked"
+                />
+        <Frame x:Name="frameImage" IsVisible="false" HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="FillAndExpand"
+                                  HeightRequest="190" Padding="0"
+                                  CornerRadius="10" IsClippedToBounds="True">
+                                <Frame.Content>
+                                       
+                                <Image x:Name="previewImage"   Aspect="AspectFill"/>
+
+                                    </Frame.Content>
+                                </Frame>
+    </VerticalStackLayout>
+</ContentPage>

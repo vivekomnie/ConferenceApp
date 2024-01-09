@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConference.Pages.LoginPage"
+             Title="User Detail"
+             NavigationPage.BackButtonTitle="Back">
+     <VerticalStackLayout Margin="20" Spacing="20">
+        
+        <StackLayout  Spacing="10">
+        <Label Text="User name: " />
+        <Entry Placeholder="Email Address" x:Name="emailEntry"/>
+        <Label Text="Password: " />
+        <Entry Placeholder="Password" IsPassword="True" x:Name="passEntry"/>
+        <Button Text="Sign In" Clicked="LoginClicked" x:Name="signButton"
+                />
+             <Button Text="Logout" Clicked="LogoutClicked" x:Name="logoutButton"
+                />
+            </StackLayout>
+           
+    </VerticalStackLayout>
+</ContentPage>

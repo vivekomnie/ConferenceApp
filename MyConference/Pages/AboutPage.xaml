@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConference.Pages.AboutPage"
+             Title="About">
+    <VerticalStackLayout Margin="10" Spacing="10">
+        
+        <Button Text="Login" Clicked="LoginButton_Clicked"
+                x:Name="loginButton"
+                />
+       
+        <Button x:Name="addConference" Text="Add Conference" Clicked="AddConference_Clicked"
+                />
+        <Button x:Name="addSession" Text="Add Session" Clicked="AddSession_Clicked"
+                />
+        <Button x:Name="addSponsor" Text="Add Sponsor" Clicked="AddSponsor_Clicked"
+                />
+        <Button x:Name="logout" Text="Log Out" Clicked="Logout_Clicked"
+                />
+    </VerticalStackLayout>
+</ContentPage>
+

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConference.Pages.SponsorDetailViewPage"
+             Title="Sponsor Details">
+        <VerticalStackLayout Spacing="0" Margin="10">
+        <Label Text="Name:" />
+        <Label x:Name="nameLbl"
+            VerticalOptions="Center" Margin="10"
+            />
+        <Image BackgroundColor="LightGray" WidthRequest="300" HeightRequest="1"/>
+        <Label Text="Description:" />
+        <Label x:Name="descriptionlbl"
+            VerticalOptions="Center" Margin="10"
+             />
+        <Image BackgroundColor="LightGray" WidthRequest="300" HeightRequest="1"/>
+        <Label Text="Logo Url:" />
+        <Label x:Name="logoUrlLbl"
+            VerticalOptions="Center" Margin="10"
+             />
+        <Frame x:Name="frameImage" HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="FillAndExpand"
+                                  HeightRequest="190" Padding="0"
+                                  CornerRadius="10" IsClippedToBounds="True">
+                                <Frame.Content>
+                                       
+                                <Image x:Name="Logoicon"  Aspect="AspectFill"/>
+
+                                    </Frame.Content>
+                                </Frame>
+    </VerticalStackLayout>
+</ContentPage>

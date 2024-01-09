@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConference.Pages.AddConferencePage"
+             Title="Add Conference" NavigationPage.BackButtonTitle="Back">
+     <VerticalStackLayout Margin="10" Spacing="10">
+        <Label Text="Name:" FontSize="16"
+                                       FontAttributes="Bold"/>
+        <Entry Placeholder="Name" x:Name="nameEntry"/>
+        <Label Text="Address:" FontSize="16"
+                                       FontAttributes="Bold"/>
+        <Entry Placeholder="Address" x:Name="addressEntry"/>
+    
+        <Label Text="Start Date:" FontSize="16"
+                                       FontAttributes="Bold"/>
+
+        <DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    Margin="0, 0, 0, 0"
+                    DateSelected="OnDateSelected" />
+        <Label Text="End Date:" FontSize="16"
+                                       FontAttributes="Bold"/>
+
+        <DatePicker x:Name="endDatePicker"
+                    Format="D"
+                    Margin="0, 0, 0, 0"
+                    DateSelected="OnDateSelected" />
+        <Label Text="Description:" FontSize="16"
+                                       FontAttributes="Bold"/>
+        <Entry Placeholder="Description" x:Name="descptionEntry"/>
+        <Button Text="Add" Clicked="Add_Clicked"
+                />
+        
+    </VerticalStackLayout>
+</ContentPage>

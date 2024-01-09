@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyConference.ViewModels"
+             x:Class="MyConference.Pages.AddSessionPage"
+             Title="Add Session" NavigationPage.BackButtonTitle="Back">
+    <ContentPage.BindingContext>
+
+        <local:AddSessionPageViewModel></local:AddSessionPageViewModel>
+    </ContentPage.BindingContext>
+    
+    <StackLayout Padding="10" Spacing="15">
+            <Label Text="Conference :" FontSize="16"
+                                       FontAttributes="Bold"/>
+        <Picker x:Name="ConferencePicker"
+        Title="Select a Conference"
+        TitleColor="Red"
+        ItemsSource="{Binding conferenceList}"
+        ItemDisplayBinding="{Binding Name}"
+        SelectedItem="{Binding SelectedConference, Mode=TwoWay}"
+        >
+           
+  
+</Picker>
+            <Label Text="Name: " FontSize="16"
+                                       FontAttributes="Bold"/>
+        <Entry Placeholder="Name" x:Name="nameField"/>
+            <Label Text="Description: " FontSize="16"
+                                       FontAttributes="Bold"/>
+            <Entry Placeholder="Description" x:Name="descriptionField"/>
+            <Label Text="Date :" FontSize="16"
+                                       FontAttributes="Bold"/>
+            <DatePicker x:Name="datePicker1"
+                    Format="yyyy-MM-dd"
+                    Margin="0, 0, 0, 0"
+                    DateSelected="OnDateSelected"
+                    Date="{Binding SelectedConference.StartDate}"
+                    MinimumDate="{Binding SelectedConference.StartDate}"
+                    />
+            <Label Text="Time :" FontSize="16"
+                                       FontAttributes="Bold"/>
+            <TimePicker x:Name="timePicker"
+
+                    Format="HH:mm"
+                    Margin="0, 0, 0, 0"
+                     />
+            <Label Text="Speaker Name :" FontSize="16"
+                                       FontAttributes="Bold"/>
+            <Entry Placeholder="Speaker Name" x:Name="speakerField"/>
+             <Button Text="Add" Clicked="Add_Clicked"
+                />
+        </StackLayout>
+    
+   
+    
+
+</ContentPage>

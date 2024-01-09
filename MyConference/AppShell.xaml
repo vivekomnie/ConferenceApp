@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MyConference.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MyConference.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Confernce" Icon="tab_schedule">
+            <ShellContent
+                Title="Day 1"
+                ContentTemplate="{DataTemplate pages:ScheduleDayCong1Page}"
+                Route="ScheduleDayCong1" />
+            
+        </Tab>
+         <Tab Title="Sponsor" Icon="tab_sponsors">
+            <ShellContent
+                Title="Day 1"
+                ContentTemplate="{DataTemplate pages:ScheduleSponsors1Page}"
+                Route="ScheduleSponsors1Page" />
+            
+        </Tab>
+        <!--<Tab Title="Schedule" Icon="tab_schedule">
+            <ShellContent
+                Title="Day 1"
+                ContentTemplate="{DataTemplate pages:ScheduleDay1Page}"
+                Route="ScheduleDay1" />
+            <ShellContent
+                Title="Day 2"
+                ContentTemplate="{DataTemplate pages:ScheduleDay2Page}"
+                Route="ScheduleDay2" />
+        </Tab>-->
+        <!--<Tab Title="My Agenda" Icon="tab_agenda">
+            <ShellContent
+                Title="Day 1"
+                ContentTemplate="{DataTemplate pages:AgendaPage}"
+                Route="MyAgendaDay1" />
+
+            <ShellContent
+                Title="Day 2"
+                ContentTemplate="{DataTemplate  pages:AgendaPage}"
+                Route="MyAgendaDay2" />
+        </Tab>-->
+         <!--<Tab Title="My Agenda" Icon="tab_agenda">
+            <ShellContent
+                Title="Day 2"
+                ContentTemplate="{DataTemplate  pages:AgendaPage}"
+                Route="MyAgendaDay2" />
+        </Tab>-->
+        <!--<Tab Title="Sponsors" Icon="tab_sponsors">
+            <ShellContent
+                Title="Sponsors"
+                ContentTemplate="{DataTemplate pages:SponsorsPage}"
+                Route="Sponsors" />
+        </Tab>-->
+        <Tab Title="Map" Icon="tab_map">
+            <ShellContent
+                Title="Map"
+                ContentTemplate="{DataTemplate pages:MapPage}"
+                Route="Map" />
+        </Tab>
+        <Tab Title="About" Icon="tab_about">
+            <ShellContent
+                Title="About"
+                ContentTemplate="{DataTemplate pages:AboutPage}"
+                Route="Map" />
+        </Tab>
+    </TabBar>
+
+</Shell>
